@@ -1,6 +1,7 @@
 import './css/styles.css';
 import debounce from 'lodash.debounce';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { fetchCountries } from './fetchCountries';
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
@@ -9,19 +10,7 @@ const fetchCountriesLine = document.getElementById('search-box');
 
 fetchCountriesLine.addEventListener("input", debounce(onInput, DEBOUNCE_DELAY));
     
-function fetchCountries(name) {
-    const filter = '?fields=name,capital,population,flags,languages';
-    return fetch(
-        `https://restcountries.com/v2/name/${name}${filter}`
-      ).then((response) => {
-        if (!response.ok) {
-           Notify.failure('Oops, there is no country with that name');
-      throw new Error(response.status);
-      
-    }
-    return response.json();
-  });
-}
+
 
 function onInput(event) {
   let inputValue = event.target.value.trim();
