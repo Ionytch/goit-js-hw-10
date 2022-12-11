@@ -18,3 +18,31 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+
+.country-list__item{
+  display: flex;
+  gap: 20px;
+}
+.country-info{
+  width: 600px;
+}
+.country-info__wrapper{
+  display: flex;
+  gap: 50px;
+}
+.country-info__name{
+font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+}
+.text-stile {
+  font-weight: 400;
+    font-size: 16px;
+    line-height: 1.17;
+}
+
+.title-stile {
+  font-weight: 700;
+    font-size: 24px;
+    line-height: 1.17;
+}

@@ -32,7 +32,7 @@ function renderCountriesList(countries) {
       .map((country) => {
         return `
     <li class="country-list__item">
-    <img class="country-list__flags" src="${country.flags.svg}" alt="${country.name}" width="25" />
+    <img class="country-list__flags" src="${country.flags.svg}" alt="${country.name}" width="45" />
     <h2 class="country-list__name">${country.name}</h2>
   </li>`;
       }).join("");
@@ -49,18 +49,15 @@ function renderCountriesList(countries) {
           lengList.push(lang.name);
         }
         console.log(Object.values(lengList));
-      return `
-          <div>
+      return `         
           <div class="country-info__wrapper">
-      <img class="country-info__flags" src="${country.flags.svg}" alt="${country.name}" width="50" />
+      <img class="country-info__flags" src="${country.flags.svg}" alt="${country.name}" width="100" />
         <h2 class="country-info__name">${country.name}</h2>
       </div>
-            <p><b>capital</b>: ${country.capital}</p>
-            <p><b>population</b>: ${country.population}</p>
-            <p><b>language</b>: ${Object.values(lengList)}</p>
-            
-           </div>
-       `;
+            <p class="text-stile"><b class="title-stile">CAPITAL</b>: ${country.capital}</p>
+            <p class="text-stile"><b class="title-stile">POPULATION</b>: ${country.population}</p>
+            <p class="text-stile"><b class="title-stile">LANGUAGES</b>: ${Object.values(lengList)}</p>      
+        `;
      })
      .join("");
     countryInfo.innerHTML = markup;
